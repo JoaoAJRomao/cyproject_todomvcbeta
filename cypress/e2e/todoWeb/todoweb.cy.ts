@@ -1,4 +1,5 @@
 /// <reference types="cypress"/>
+import { LOCATOR } from "./elements"
 
 describe('Example to-do app', () => {
     beforeEach(() => {
@@ -6,7 +7,8 @@ describe('Example to-do app', () => {
     })
 
     it('Display a text by default', () => {
-        cy.get('[data-testid="text-input"]').should('have.attr', 'placeholder', 'What needs to be done?')
+        // cy.get('[data-testid="text-input"]').should('have.attr', 'placeholder', 'What needs to be done?')
+        cy.get(LOCATOR.MAIN_FIELD).should('have.attr', 'placeholder', 'What needs to be done?')
     })
 
     it('Can add a new todo item', () => {
